@@ -777,3 +777,148 @@ a:hover {
         font-size: 1.5rem;
     }
 }
+
+
+/* ---------- ESTILOS PARA PÁGINA HOME ---------- */
+
+/* Container dos botões da home */
+.botoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+/* Estilos dos botões principais */
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.botao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.botao:hover::before {
+    left: 100%;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+    text-decoration: none;
+    color: white;
+}
+
+.botao:active {
+    transform: translateY(-1px);
+}
+
+.botao i {
+    font-size: 20px;
+}
+
+/* Botão de logout com cor diferente */
+.botao.logout {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
+}
+
+.botao.logout:hover {
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+}
+
+/* Mensagem de boas-vindas */
+.mb-20 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #6c757d;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Ajustes específicos para a home */
+.container h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+/* Responsividade para home */
+@media (max-width: 768px) {
+    .botoes-container {
+        max-width: 100%;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .botao {
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+    
+    .botao i {
+        font-size: 18px;
+    }
+    
+    .container h1 {
+        font-size: 2em;
+    }
+    
+    .mb-20 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .botoes-container {
+        gap: 12px;
+        margin-top: 25px;
+        padding: 0 15px;
+    }
+    
+    .botao {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+    
+    .botao i {
+        font-size: 16px;
+    }
+    
+    .container h1 {
+        font-size: 1.8em;
+    }
+    
+    .mb-20 {
+        font-size: 15px;
+    }
+}
