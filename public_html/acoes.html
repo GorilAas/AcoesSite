@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Ações | Simulador de Ações</title>
+    <!-- Link  para o CSS -->
+    <link href="CSS/style.css" rel="stylesheet">
+    <!-- Ícones do Font Awesome para melhorar a interface -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Container principal da aplicação -->
+    <div class="container fade-in">
+        <!-- Título principal com ícone -->
+        <h1><i class="fas fa-chart-line"></i> Simulador de Ações</h1>
+
+        <!-- Seção de estatísticas - mostra informações resumidas -->
+        <div class="estatisticas">
+            <!-- Total de ações carregadas na lista -->
+            <div class="stat-item">
+                <div class="stat-number" id="total-acoes">0</div>
+                <div class="stat-label">Ações na Lista</div>
+            </div>
+            <!-- Total de ações compradas (na carteira) -->
+            <div class="stat-item">
+                <div class="stat-number" id="total-carteira">0</div>
+                <div class="stat-label">Ações na Carteira</div>
+            </div>
+            <!-- Valor total investido -->
+            <div class="stat-item">
+                <div class="stat-number" id="valor-investido">$ 0,00</div>
+                <div class="stat-label">Valor Investido</div>
+            </div>
+        </div>
+
+        <!-- Área de pesquisa de ações -->
+        <div class="pesquisa-container">
+            <!-- Campo de texto para digitar o símbolo da ação -->
+            <input type="text" id="pesquisa" placeholder="Digite o símbolo da ação (ex: AAPL, GOOGL, TSLA)" onkeypress="handleEnter(event)">
+            <!-- Botão para iniciar a busca -->
+            <button onclick="buscarAcao()">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+            <!-- Botão para limpar toda a lista de ações -->
+            <button onclick="limparLista()" style="background: #e74c3c;">
+                <i class="fas fa-trash"></i> Limpar Lista
+            </button>
+        </div>
+
+        <!-- Seção de ações populares - botões rápidos -->
+        <div class="acoes-populares">
+            <h3><i class="fas fa-star"></i> Ações Populares:</h3>
+            <!-- Cada botão carrega uma ação específica quando clicado -->
+            <button class="btn-popular" onclick="carregarAcao('AAPL')">AAPL - Apple</button>
+            <button class="btn-popular" onclick="carregarAcao('GOOGL')">GOOGL - Google</button>
+            <button class="btn-popular" onclick="carregarAcao('AMZN')">AMZN - Amazon</button>
+            <button class="btn-popular" onclick="carregarAcao('MSFT')">MSFT - Microsoft</button>
+            <button class="btn-popular" onclick="carregarAcao('TSLA')">TSLA - Tesla</button>
+            <button class="btn-popular" onclick="carregarAcao('NVDA')">NVDA - Nvidia</button>
+            <button class="btn-popular" onclick="carregarAcao('META')">META - Meta</button>
+            <button class="btn-popular" onclick="carregarAcao('NFLX')">NFLX - Netflix</button>
+        </div>
+
+        <!-- Container onde as ações serão exibidas dinamicamente -->
+        <div id="lista-acoes" class="acoes-container">
+            <!-- Mensagem inicial quando não há ações carregadas -->
+            <p class="text-center">
+                <i class="fas fa-info-circle"></i><br>
+                Clique em uma das ações populares acima ou pesquise por uma ação específica para começar.
+            </p>
+        </div>
+        
+        <!-- Link para voltar à página inicial (você pode ajustar o destino) -->
+        <a href="home.html" class="voltar-link">
+            <i class="fas fa-arrow-left"></i> Voltar para a página inicial
+        </a>
+    </div>
+
+    <!-- Link para o arquivo JavaScript separado -->
+    <script src="scripts/simulador-acoes.js"></script>
+</body>
+</html>

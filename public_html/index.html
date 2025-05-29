@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Simulador de Ações</title>
+    <link href="CSS/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container fade-in">
+        <h1>Login</h1>
+        <!-- Caixa do formulário de login -->
+        <div class="login-box">
+            <form onsubmit="fazerLogin(event)">
+                <div>
+                    <label for="usuario"><i class="fas fa-user"></i> Usuário</label>
+                    <input type="text" id="usuario" required placeholder="Digite seu nome de usuário">
+                </div>
+                <div>
+                    <label for="senha"><i class="fas fa-lock"></i> Senha</label>
+                    <input type="password" id="senha" required placeholder="Digite sua senha">
+                </div>
+                <div>
+                    <input type="submit" value="Entrar">
+                </div>
+            </form>
+            <!-- Mensagem de erro -->
+            <p id="mensagem" class="mensagem-erro"></p>
+        </div>
+        <!-- Link para registro -->
+        <p class="text-center mt-20">
+            Não tem uma conta? <a href="registro.html" class="voltar-link">Registre-se aqui</a>
+        </p>
+    </div>
+    
+    <!-- Carregando o arquivo JavaScript -->
+    <script src="scripts/login.js"></script>
+</body>
+</html>
