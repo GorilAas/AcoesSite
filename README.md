@@ -177,12 +177,6 @@ Se encontrar algum problema ou tiver dúvidas:
 - ✅ Código documentado
 - ✅ Estrutura modularizada
 
-### Próximas Versões
-- 🔄 Sistema de compra de ações
-- 🔄 Carteira de investimentos
-- 🔄 Gráficos de performance
-- 🔄 Histórico de transações
-
 ---
 
 **⭐ Se este projeto te ajudou, considere dar uma estrela no repositório!**
