@@ -1,40 +1,65 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<!DOCTYPE html> <!-- Declara que este é um documento HTML5 -->
+<html lang="pt-BR"> <!-- Elemento raiz do HTML, define o idioma como português brasileiro -->
+<head> <!-- Seção que contém metadados e configurações da página (não visível ao usuário) -->
+    <!-- Define a codificação de caracteres como UTF-8 para suportar acentos e caracteres especiais -->
     <meta charset="UTF-8">
+    
+    <!-- Configura a viewport para responsividade em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Define o título que aparece na aba do navegador -->
     <title>Login | Simulador de Ações</title>
+    
+    <!-- Link para o arquivo CSS personalizado do projeto -->
     <link href="CSS/style.css" rel="stylesheet">
+    
+    <!-- Link para a biblioteca Font Awesome (ícones) via CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+
+<body> <!-- Corpo da página - conteúdo visível ao usuário -->
+    <!-- Container principal com classe CSS para animação de fade-in -->
     <div class="container fade-in">
+        <!-- Título principal da página -->
         <h1>Login</h1>
+        
         <!-- Caixa do formulário de login -->
         <div class="login-box">
+            <!-- Formulário que chama a função JavaScript fazerLogin() quando submetido -->
             <form onsubmit="fazerLogin(event)">
+                <!-- Campo para nome de usuário -->
                 <div>
+                    <!-- Label (rótulo) do campo usuário com ícone do Font Awesome -->
                     <label for="usuario"><i class="fas fa-user"></i> Usuário</label>
+                    <!-- Input de texto obrigatório para o usuário -->
                     <input type="text" id="usuario" required placeholder="Digite seu nome de usuário">
                 </div>
+                
+                <!-- Campo para senha -->
                 <div>
+                    <!-- Label (rótulo) do campo senha com ícone de cadeado -->
                     <label for="senha"><i class="fas fa-lock"></i> Senha</label>
+                    <!-- Input de senha (caracteres ocultos) obrigatório -->
                     <input type="password" id="senha" required placeholder="Digite sua senha">
                 </div>
+                
+                <!-- Botão de submissão do formulário -->
                 <div>
                     <input type="submit" value="Entrar">
                 </div>
             </form>
-            <!-- Mensagem de erro -->
+            
+            <!-- Mensagem de erro (inicialmente vazia, preenchida via JavaScript) -->
             <p id="mensagem" class="mensagem-erro"></p>
         </div>
-        <!-- Link para registro -->
+        
+        <!-- Link para registro (caso usuário não tenha conta) -->
         <p class="text-center mt-20">
             Não tem uma conta? <a href="registro.html" class="voltar-link">Registre-se aqui</a>
         </p>
     </div>
     
-    <!-- Carregando o arquivo JavaScript -->
+    <!-- Carregando o arquivo JavaScript que contém a lógica de login -->
     <script src="scripts/login.js"></script>
 </body>
 </html>
