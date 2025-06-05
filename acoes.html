@@ -1,83 +1,142 @@
 <!DOCTYPE html>
+<!-- Declaração do tipo de documento HTML5 -->
 <html lang="pt-BR">
+<!-- Tag raiz do HTML com idioma definido para português brasileiro -->
 <head>
+    <!-- Seção head - contém metadados e links para recursos externos -->
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 para suportar acentos e caracteres especiais -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configuração responsiva - ajusta a visualização em dispositivos móveis -->
     <title>Comprar Ações | Simulador de Ações</title>
-    <!-- Link  para o CSS -->
+    <!-- Título que aparece na aba do navegador -->
+    
+    <!-- Link para o CSS -->
     <link href="CSS/style.css" rel="stylesheet">
+    <!-- Conecta o arquivo CSS externo para estilização da página -->
+    
     <!-- Ícones do Font Awesome para melhorar a interface -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Biblioteca de ícones externa - permite usar ícones como fas fa-chart-line -->
 </head>
 <body>
+    <!-- Início do corpo da página - conteúdo visível -->
+    
     <!-- Container principal da aplicação -->
     <div class="container fade-in">
+    <!-- Div principal que envolve todo o conteúdo, com classes CSS para layout e animação -->
+    
         <!-- Título principal com ícone -->
         <h1><i class="fas fa-chart-line"></i> Simulador de Ações</h1>
-
+        <!-- Cabeçalho h1 com ícone de gráfico e título da aplicação -->
+        
         <!-- Seção de estatísticas - mostra informações resumidas -->
         <div class="estatisticas">
+        <!-- Container para os cards de estatísticas -->
+        
             <!-- Total de ações carregadas na lista -->
             <div class="stat-item">
+            <!-- Card individual de estatística -->
                 <div class="stat-number" id="total-acoes">0</div>
+                <!-- Número da estatística com ID para manipulação via JavaScript -->
                 <div class="stat-label">Ações na Lista</div>
+                <!-- Rótulo explicativo da estatística -->
             </div>
+            
             <!-- Total de ações compradas (na carteira) -->
             <div class="stat-item">
+            <!-- Segundo card de estatística -->
                 <div class="stat-number" id="total-carteira">0</div>
+                <!-- Contador de ações na carteira, controlado por JavaScript -->
                 <div class="stat-label">Ações na Carteira</div>
+                <!-- Label explicativa -->
             </div>
+            
             <!-- Valor total investido -->
             <div class="stat-item">
+            <!-- Terceiro card de estatística -->
                 <div class="stat-number" id="valor-investido">$ 0,00</div>
+                <!-- Valor monetário total investido, atualizado dinamicamente -->
                 <div class="stat-label">Valor Investido</div>
+                <!-- Descrição do valor -->
             </div>
         </div>
-
+        
         <!-- Área de pesquisa de ações -->
         <div class="pesquisa-container">
+        <!-- Container que agrupa os elementos de busca -->
+        
             <!-- Campo de texto para digitar o símbolo da ação -->
             <input type="text" id="pesquisa" placeholder="Digite o símbolo da ação (ex: AAPL, GOOGL, TSLA)" onkeypress="handleEnter(event)">
+            <!-- Input de texto com ID para JavaScript, placeholder explicativo e evento de tecla pressionada -->
+            
             <!-- Botão para iniciar a busca -->
             <button onclick="buscarAcao()">
+            <!-- Botão que chama função JavaScript quando clicado -->
                 <i class="fas fa-search"></i> Buscar
+                <!-- Ícone de lupa + texto do botão -->
             </button>
+            
             <!-- Botão para limpar toda a lista de ações -->
             <button onclick="limparLista()" style="background: #e74c3c;">
+            <!-- Botão com função JavaScript e estilo inline para cor vermelha -->
                 <i class="fas fa-trash"></i> Limpar Lista
+                <!-- Ícone de lixeira + texto -->
             </button>
         </div>
-
+        
         <!-- Seção de ações populares - botões rápidos -->
         <div class="acoes-populares">
+        <!-- Container para ações pré-definidas -->
+        
             <h3><i class="fas fa-star"></i> Ações Populares:</h3>
+            <!-- Subtítulo com ícone de estrela -->
+            
             <!-- Cada botão carrega uma ação específica quando clicado -->
             <button class="btn-popular" onclick="carregarAcao('AAPL')">AAPL - Apple</button>
+            <!-- Botão que chama função JavaScript passando 'AAPL' como parâmetro -->
             <button class="btn-popular" onclick="carregarAcao('GOOGL')">GOOGL - Google</button>
+            <!-- Botão para carregar ação do Google -->
             <button class="btn-popular" onclick="carregarAcao('AMZN')">AMZN - Amazon</button>
+            <!-- Botão para carregar ação da Amazon -->
             <button class="btn-popular" onclick="carregarAcao('MSFT')">MSFT - Microsoft</button>
+            <!-- Botão para carregar ação da Microsoft -->
             <button class="btn-popular" onclick="carregarAcao('TSLA')">TSLA - Tesla</button>
+            <!-- Botão para carregar ação da Tesla -->
             <button class="btn-popular" onclick="carregarAcao('NVDA')">NVDA - Nvidia</button>
+            <!-- Botão para carregar ação da Nvidia -->
             <button class="btn-popular" onclick="carregarAcao('META')">META - Meta</button>
+            <!-- Botão para carregar ação da Meta (Facebook) -->
             <button class="btn-popular" onclick="carregarAcao('NFLX')">NFLX - Netflix</button>
+            <!-- Botão para carregar ação da Netflix -->
         </div>
-
+        
         <!-- Container onde as ações serão exibidas dinamicamente -->
         <div id="lista-acoes" class="acoes-container">
+        <!-- Div principal onde o JavaScript vai inserir as ações carregadas -->
+        
             <!-- Mensagem inicial quando não há ações carregadas -->
             <p class="text-center">
+            <!-- Parágrafo centralizado com mensagem informativa -->
                 <i class="fas fa-info-circle"></i><br>
+                <!-- Ícone de informação com quebra de linha -->
                 Clique em uma das ações populares acima ou pesquise por uma ação específica para começar.
+                <!-- Texto explicativo para o usuário -->
             </p>
         </div>
         
         <!-- Link para voltar à página inicial (você pode ajustar o destino) -->
         <a href="home.html" class="voltar-link">
+        <!-- Link que direciona para home.html com classe CSS específica -->
             <i class="fas fa-arrow-left"></i> Voltar para a página inicial
+            <!-- Ícone de seta para esquerda + texto do link -->
         </a>
     </div>
-
+    
     <!-- Link para o arquivo JavaScript separado -->
     <script src="scripts/simulador-acoes.js"></script>
+    <!-- Carrega e executa o arquivo JavaScript externo que contém toda a lógica da aplicação -->
 </body>
+<!-- Fim do corpo da página -->
 </html>
+<!-- Fim do documento HTML -->
