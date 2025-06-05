@@ -1,29 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<!DOCTYPE html> <!-- Declara que este é um documento HTML5 -->
+<html lang="pt-BR"> <!-- Elemento raiz do HTML, define o idioma como português brasileiro -->
+<head> <!-- Seção que contém metadados e configurações da página (não visível ao usuário) -->
+    <!-- Define a codificação de caracteres como UTF-8 para suportar acentos e caracteres especiais -->
     <meta charset="UTF-8">
+    
+    <!-- Configura a viewport para responsividade em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Define o título que aparece na aba do navegador -->
     <title>Minha Carteira | Simulador de Ações</title>
+    
+    <!-- Link para o arquivo CSS personalizado do projeto -->
     <link href="CSS/style.css" rel="stylesheet">
+    
+    <!-- Link para a biblioteca Font Awesome (ícones) via CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="carteira-page">
+
+<body class="carteira-page"> <!-- Corpo da página com classe específica para estilização da carteira -->
+    <!-- Container principal com classe CSS para animação de fade-in -->
     <div class="container fade-in">
+        <!-- Título principal da página com ícone de gráfico -->
         <h1><i class="fas fa-chart-line"></i> Minha Carteira de Ações</h1>
         
         <!-- Resumo da carteira -->
+        <!-- Div vazia que será preenchida via JavaScript com informações resumidas da carteira -->
         <div id="resumo-carteira" class="resumo-carteira"></div>
         
         <!-- Aqui aparecerão as ações compradas -->
+        <!-- Div vazia que será preenchida via JavaScript com lista das ações na carteira -->
         <div id="minha-carteira" class="acoes-container"></div>
         
         <!-- Botão para voltar -->
+        <!-- Link para retornar à página inicial com ícone de seta para esquerda -->
         <a href="home.html" class="voltar-link">
             <i class="fas fa-arrow-left"></i> Voltar para a página inicial
         </a>
     </div>
     
-    <!-- Link para o arquivo JavaScript -->
+    <!-- Link para o arquivo JavaScript que contém a lógica da carteira -->
     <script src="scripts/carteira.js"></script>
 </body>
 </html>
