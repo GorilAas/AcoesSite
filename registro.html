@@ -1,40 +1,65 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<!DOCTYPE html> <!-- Declara que este é um documento HTML5 -->
+<html lang="pt-BR"> <!-- Elemento raiz do HTML, define o idioma como português brasileiro -->
+<head> <!-- Seção que contém metadados e configurações da página (não visível ao usuário) -->
+    <!-- Define a codificação de caracteres como UTF-8 para suportar acentos e caracteres especiais -->
     <meta charset="UTF-8">
+    
+    <!-- Configura a viewport para responsividade em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Define o título que aparece na aba do navegador -->
     <title>Registrar | Simulador de Ações</title>
+    
+    <!-- Link para o arquivo CSS personalizado do projeto -->
     <link href="CSS/style.css" rel="stylesheet">
+    
+    <!-- Link para a biblioteca Font Awesome (ícones) via CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+
+<body> <!-- Corpo da página - conteúdo visível ao usuário -->
+    <!-- Container principal com classe CSS para animação de fade-in -->
     <div class="container fade-in">
+        <!-- Título principal da página de registro -->
         <h1>Registro</h1>
+        
         <!-- Caixa do formulário de registro -->
         <div class="login-box">
+            <!-- Formulário que chama a função JavaScript registrarUsuario() quando submetido -->
             <form onsubmit="registrarUsuario(event)">
+                <!-- Campo para escolher nome de usuário -->
                 <div>
+                    <!-- Label (rótulo) do campo usuário com ícone do Font Awesome -->
                     <label for="novoUsuario"><i class="fas fa-user"></i> Usuário</label>
+                    <!-- Input de texto obrigatório para o novo usuário -->
                     <input type="text" id="novoUsuario" required placeholder="Escolha um nome de usuário">
                 </div>
+                
+                <!-- Campo para criar senha -->
                 <div>
+                    <!-- Label (rótulo) do campo senha com ícone de cadeado -->
                     <label for="novaSenha"><i class="fas fa-lock"></i> Senha</label>
+                    <!-- Input de senha (caracteres ocultos) obrigatório para nova senha -->
                     <input type="password" id="novaSenha" required placeholder="Escolha uma senha segura">
                 </div>
+                
+                <!-- Botão de submissão do formulário de registro -->
                 <div>
                     <input type="submit" value="Registrar">
                 </div>
             </form>
-            <!-- Aqui mostra mensagem de sucesso ou erro -->
+            
+            <!-- Aqui mostra mensagem de sucesso ou erro (inicialmente vazia, preenchida via JavaScript) -->
             <p id="mensagem" class="mensagem-sucesso"></p>
         </div>
+        
         <!-- Link para login se já tiver conta -->
         <p class="text-center mt-20">
             Já tem uma conta? <a href="index.html" class="voltar-link">Faça login aqui</a>
         </p>
     </div>
     
-    <!-- Carregando o arquivo JavaScript -->
+    <!-- Carregando o arquivo JavaScript que contém a lógica de registro -->
     <script src="scripts/registro.js"></script>
 </body>
 </html>
